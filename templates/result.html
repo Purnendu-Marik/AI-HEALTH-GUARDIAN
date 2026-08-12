@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Health Insights | AI Health Guardian</title>
+
+    <link rel="stylesheet" href="/static/css/result.css">
+
+</head>
+
+<body>
+
+    <div class="result-container">
+
+        <!-- ================================= -->
+        <!-- BRAND -->
+        <!-- ================================= -->
+
+        <div class="brand">
+            🩺 AI Health Guardian
+        </div>
+
+
+        <!-- ================================= -->
+        <!-- PAGE HEADER -->
+        <!-- ================================= -->
+
+        <header class="page-header">
+
+            <h1>Your Health Insights</h1>
+
+            <p>
+                A personalized health summary generated from the information you provided.
+            </p>
+
+        </header>
+
+
+        <!-- ================================= -->
+        <!-- SUMMARY + AI POWERED SECTION -->
+        <!-- ================================= -->
+
+        <section class="insight-layout">
+
+
+            <!-- ================================= -->
+            <!-- LEFT : HEALTH SUMMARY -->
+            <!-- ================================= -->
+
+            <div class="summary-card">
+
+                <div class="card-header">
+
+                    <div class="card-icon">
+                        📊
+                    </div>
+
+                    <div>
+
+                        <h2>Health Summary</h2>
+
+                        <p>
+                            Summary generated from your assessment
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="status-box">
+
+                    <span>Health Score</span>
+
+                    <strong>
+                        {{ result.score }}/100
+                    </strong>
+
+                </div>
+
+                <div class="status-box">
+
+                    <span>Overall Status</span>
+
+                    <strong>
+                        {{ result.status }}
+                    </strong>
+
+                </div>
+
+
+                <!-- OBSERVATIONS -->
+
+                <div class="summary-section">
+
+                    <h3>🔎 Key Observations</h3>
+
+                    {% for observation in result.observations %}
+
+                    <div class="summary-item">
+
+                        <span>•</span>
+
+                        <p>
+                            {{ observation }}
+                        </p>
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+
+                <!-- RECOMMENDATIONS -->
+
+                <div class="summary-section">
+
+                    <h3>💡 General Recommendations</h3>
+
+                    {% for recommendation in result.recommendations %}
+
+                    <div class="summary-item">
+
+                        <span>✓</span>
+
+                        <p>
+                            {{ recommendation }}
+                        </p>
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+
+                <!-- SYMPTOMS -->
+
+                <div class="summary-section">
+
+                    <h3>🩹 Reported Symptoms</h3>
+
+                    {% if result.symptoms %}
+
+                    <div class="symptoms">
+
+                        {% for symptom in result.symptoms %}
+
+                        <span class="symptom">
+                            {{ symptom }}
+                        </span>
+
+                        {% endfor %}
+
+                    </div>
+
+                    {% else %}
+
+                    <p class="muted">
+                        No symptoms were selected.
+                    </p>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+
+            <!-- ================================= -->
+            <!-- CENTER : CONNECTION -->
+            <!-- ================================= -->
+
+            <div class="connection">
+
+                <div class="connection-dot"></div>
+                <div class="connection-dot"></div>
+                <div class="connection-dot"></div>
+                <div class="connection-dot"></div>
+                <div class="connection-dot"></div>
+                <div class="connection-dot"></div>
+
+            </div>
+
+
+            <!-- ================================= -->
+            <!-- RIGHT : AI POWERED -->
+            <!-- ================================= -->
+
+            <div class="ai-card">
+
+
+                <!-- AI HEADER -->
+
+                <div class="ai-card-header">
+
+                    <div class="ai-icon">
+                        🤖
+                    </div>
+
+                    <div>
+
+                        <h2>AI Health Guardian</h2>
+
+                        <p>
+                            ✦ AI Powered
+                        </p>
+
+                        <span>
+                            Personalized insights powered by AI
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================================= -->
+                <!-- AI CONTENT -->
+                <!-- ================================= -->
+
+                <div class="ai-content">
+
+                    {% if ai_sections %}
+
+
+                    <!-- ============================= -->
+                    <!-- OVERALL HEALTH INSIGHT -->
+                    <!-- ============================= -->
+
+                    {% if ai_sections.overall %}
+
+                    <div class="ai-section-card overall-ai">
+
+                        <div class="ai-section-title">
+                            🧠 Overall Health Insight
+                        </div>
+
+                        <p>
+                            {{ ai_sections.overall }}
+                        </p>
+
+                    </div>
+
+                    {% endif %}
+
+
+                    <!-- ============================= -->
+                    <!-- KEY INSIGHTS -->
+                    <!-- ============================= -->
+
+                    {% if ai_sections.key_insights %}
+
+                    <div class="ai-section-card">
+
+                        <div class="ai-section-title">
+                            🔎 Key Insights
+                        </div>
+
+                        <div class="ai-list">
+
+                            {% for insight in ai_sections.key_insights %}
+
+                            <div class="ai-list-item">
+
+                                <span>•</span>
+
+                                <p>
+                                    {{ insight }}
+                                </p>
+
+                            </div>
+
+                            {% endfor %}
+
+                        </div>
+
+                    </div>
+
+                    {% endif %}
+
+
+                    <!-- ============================= -->
+                    <!-- LIFESTYLE SUGGESTIONS -->
+                    <!-- ============================= -->
+
+                    {% if ai_sections.suggestions %}
+
+                    <div class="ai-section-card">
+
+                        <div class="ai-section-title">
+                            💡 Lifestyle Suggestions
+                        </div>
+
+                        <div class="ai-list">
+
+                            {% for suggestion in ai_sections.suggestions %}
+
+                            <div class="ai-list-item">
+
+                                <span>✓</span>
+
+                                <p>
+                                    {{ suggestion }}
+                                </p>
+
+                            </div>
+
+                            {% endfor %}
+
+                        </div>
+
+                    </div>
+
+                    {% endif %}
+
+
+                    <!-- ============================= -->
+                    <!-- PROFESSIONAL HELP -->
+                    <!-- ============================= -->
+
+                    {% if ai_sections.professional_help %}
+
+                    <div class="ai-section-card professional-ai">
+
+                        <div class="ai-section-title">
+                            ⚠️ When to Seek Professional Help
+                        </div>
+
+                        <p>
+                            {{ ai_sections.professional_help }}
+                        </p>
+
+                    </div>
+
+                    {% endif %}
+
+
+                    {% else %}
+
+
+                    <!-- ============================= -->
+                    <!-- AI UNAVAILABLE -->
+                    <!-- ============================= -->
+
+                    <div class="ai-unavailable">
+
+                        <span>🧠</span>
+
+                        <h3>
+                            AI Insights Temporarily Unavailable
+                        </h3>
+
+                        <p>
+                            {{ ai_error or
+                            "AI insights could not be generated at the moment." }}
+                        </p>
+
+                        <small>
+                            Your health assessment has still been processed successfully.
+                        </small>
+
+                    </div>
+
+                    {% endif %}
+
+
+                </div>
+
+
+                <!-- ================================= -->
+                <!-- AI DISCLAIMER -->
+                <!-- ================================= -->
+
+                <div class="ai-disclaimer">
+
+                    <span>⚠️</span>
+
+                    <p>
+                        AI-generated insights are provided for educational
+                        and informational purposes only. They are not a
+                        medical diagnosis or a substitute for professional
+                        medical advice.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- MEDICAL NOTICE -->
+        <!-- ================================= -->
+
+        <div class="medical-notice">
+
+            <span>⚠️</span>
+
+            <span>
+                This tool provides educational and preventive health
+                information. It is not a medical diagnosis or a replacement
+                for professional medical advice.
+            </span>
+
+        </div>
+
+
+        <!-- ================================= -->
+        <!-- NEW ASSESSMENT -->
+        <!-- ================================= -->
+
+        <!-- <a href="/assessment" class="back-button">
+            ← New Assessment
+        </a> -->
+
+        <div class="result-actions">
+
+            <a href="/assessment" class="back-button">
+                ← New Assessment
+            </a>
+
+            <a href="/" class="home-button">
+                🏠 Back to Home
+            </a>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

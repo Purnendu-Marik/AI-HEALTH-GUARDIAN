@@ -1,0 +1,1869 @@
+/* =========================================================
+   AI HEALTH GUARDIAN — CLEAN FINAL CSS
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+
+    background:
+        radial-gradient(circle at 15% 20%,
+            rgba(23, 37, 84, 0.95),
+            transparent 35%),
+        radial-gradient(circle at 85% 70%,
+            rgba(49, 46, 129, 0.75),
+            transparent 35%),
+        #020617;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    width: 100%;
+    padding: 18px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: rgba(2, 6, 23, 0.70);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    position: relative;
+    z-index: 100;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.logo-icon {
+    font-size: 28px;
+
+    filter:
+        drop-shadow(0 0 10px rgba(34, 211, 238, 0.65));
+}
+
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #cbd5e1;
+    text-decoration: none;
+
+    font-size: 15px;
+    padding: 10px 0;
+
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+.nav-links a.active {
+    color: #60a5fa;
+}
+
+.nav-links a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 2px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(90deg,
+            #38bdf8,
+            #6366f1);
+
+    box-shadow:
+        0 0 10px rgba(56, 189, 248, 0.8);
+}
+
+
+/* =========================================================
+   USER PROFILE CARD
+========================================================= */
+
+.user-profile-card {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    width: 430px;
+
+    padding: 9px 12px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(15, 23, 42, 0.95),
+            rgba(15, 23, 42, 0.70));
+
+    border:
+        1px solid rgba(59, 130, 246, 0.65);
+
+    box-shadow:
+        0 0 20px rgba(37, 99, 235, 0.18),
+        0 0 35px rgba(124, 58, 237, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.user-profile-card:hover {
+    border-color:
+        rgba(96, 165, 250, 0.95);
+
+    box-shadow:
+        0 0 25px rgba(37, 99, 235, 0.30),
+        0 0 45px rgba(124, 58, 237, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.10);
+}
+
+
+/* =========================================================
+   USER AVATAR
+========================================================= */
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(135deg,
+            #2563eb,
+            #7c3aed);
+
+    border:
+        2px solid rgba(96, 165, 250, 0.65);
+
+    box-shadow:
+        0 0 18px rgba(59, 130, 246, 0.45);
+}
+
+.user-avatar span {
+    font-size: 25px;
+}
+
+
+/* =========================================================
+   USER INFORMATION
+========================================================= */
+
+.user-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.user-greeting {
+    color: #ffffff;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.user-greeting strong {
+    color: #22d3ee;
+
+    text-shadow:
+        0 0 12px rgba(34, 211, 238, 0.35);
+}
+
+.user-subtitle {
+    margin-top: 4px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   LOGOUT BUTTON
+========================================================= */
+
+.logout-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    min-width: 104px;
+
+    padding: 12px 16px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    background:
+        linear-gradient(135deg,
+            rgba(239, 68, 68, 0.25),
+            rgba(190, 24, 93, 0.18));
+
+    border:
+        1px solid rgba(244, 63, 94, 0.65);
+
+    box-shadow:
+        0 0 15px rgba(244, 63, 94, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.10);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.logout-icon {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logout-button:hover {
+    transform: translateY(-2px);
+
+    background:
+        linear-gradient(135deg,
+            rgba(239, 68, 68, 0.45),
+            rgba(190, 24, 93, 0.32));
+
+    border-color:
+        rgba(251, 113, 133, 0.95);
+
+    box-shadow:
+        0 0 22px rgba(244, 63, 94, 0.38),
+        0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.logout-button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: calc(100vh - 105px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 70px;
+
+    padding: 70px 5% 50px;
+}
+
+.hero-content {
+    max-width: 680px;
+}
+
+
+/* =========================================================
+   WELCOME BADGE
+========================================================= */
+
+.badge {
+    display: inline-block;
+
+    padding: 9px 16px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(14, 165, 233, 0.13),
+            rgba(124, 58, 237, 0.13));
+
+    border:
+        1px solid rgba(96, 165, 250, 0.30);
+
+    color: #60d5ff;
+
+    font-size: 13px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 0 18px rgba(59, 130, 246, 0.08);
+}
+
+
+/* =========================================================
+   HERO HEADING
+========================================================= */
+
+.hero h1 {
+    font-size: clamp(50px, 6vw, 82px);
+
+    line-height: 1.05;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    background:
+        linear-gradient(90deg,
+            #22d3ee,
+            #60a5fa,
+            #a78bfa);
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.hero-description {
+    max-width: 600px;
+
+    color: #94a3b8;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.primary-button {
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    border-radius: 12px;
+    border: none;
+
+    text-decoration: none;
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(135deg,
+            #2563eb,
+            #7c3aed);
+
+    box-shadow:
+        0 10px 30px rgba(37, 99, 235, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(59, 130, 246, 0.40);
+}
+
+.secondary-button {
+    padding: 15px 25px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid rgba(96, 165, 250, 0.45);
+
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.secondary-button:hover {
+    transform: translateY(-3px);
+
+    background:
+        rgba(59, 130, 246, 0.12);
+
+    border-color:
+        rgba(96, 165, 250, 0.75);
+}
+
+
+/* =========================================================
+   HEALTH CARD
+========================================================= */
+
+.health-card {
+    width: 500px;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(15, 23, 42, 0.85),
+            rgba(15, 23, 42, 0.62));
+
+    border:
+        1px solid rgba(96, 165, 250, 0.25);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.35),
+        0 0 35px rgba(37, 99, 235, 0.10);
+
+    animation:
+        floating 4s ease-in-out infinite;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.small-text {
+    color: #38bdf8;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 7px;
+}
+
+.card-header h2 {
+    font-size: 24px;
+}
+
+
+/* =========================================================
+   ONLINE BADGE
+========================================================= */
+
+.online-badge {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 12px;
+
+    border-radius: 20px;
+
+    color: #22c55e;
+
+    background:
+        rgba(34, 197, 94, 0.10);
+
+    border:
+        1px solid rgba(34, 197, 94, 0.12);
+
+    font-size: 12px;
+}
+
+.online-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 12px #22c55e;
+}
+
+
+/* =========================================================
+   HEALTH SCORE
+========================================================= */
+
+.health-score {
+    display: flex;
+    justify-content: center;
+
+    padding: 40px 0;
+}
+
+.score-circle {
+    width: 240px;
+    height: 240px;
+
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 10px solid transparent;
+
+    background:
+        linear-gradient(#020617, #020617) padding-box,
+        linear-gradient(135deg,
+            #06b6d4,
+            #2563eb,
+            #7c3aed) border-box;
+
+    box-shadow:
+        0 0 35px rgba(59, 130, 246, 0.20);
+}
+
+.heart-icon {
+    color: #38bdf8;
+
+    font-size: 45px;
+
+    margin-bottom: 5px;
+
+    text-shadow:
+        0 0 15px rgba(56, 189, 248, 0.65);
+}
+
+.score-circle strong {
+    font-size: 40px;
+}
+
+.score-circle span {
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   HEALTH CARD INFO
+========================================================= */
+
+.card-info {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    padding-top: 22px;
+}
+
+.card-info-item {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.card-info-item+.card-info-item {
+    border-left:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    padding-left: 20px;
+}
+
+.card-info-item span {
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    display: block;
+
+    margin-bottom: 5px;
+}
+
+.card-info-item strong {
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   INFO ICONS
+========================================================= */
+
+.info-icon {
+    width: 42px;
+    height: 42px;
+
+    min-width: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 20px;
+}
+
+.blue-icon {
+    color: #38bdf8;
+
+    background:
+        rgba(59, 130, 246, 0.15);
+
+    box-shadow:
+        0 0 15px rgba(59, 130, 246, 0.10);
+}
+
+.green-icon {
+    color: #34d399;
+
+    background:
+        rgba(16, 185, 129, 0.15);
+
+    box-shadow:
+        0 0 15px rgba(16, 185, 129, 0.10);
+}
+
+
+/* =========================================================
+   FEATURE STRIP — FINAL
+========================================================= */
+
+.feature-strip {
+    width: 88%;
+    max-width: 1250px;
+
+    margin: 25px auto 35px;
+
+    padding: 18px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 14px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(15, 23, 42, 0.94),
+            rgba(20, 30, 65, 0.80));
+
+    border:
+        1px solid rgba(96, 165, 250, 0.20);
+
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.30),
+        0 0 35px rgba(37, 99, 235, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   TOP GLOW
+========================================================= */
+
+.feature-strip::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 10%;
+    right: 10%;
+
+    height: 2px;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            #38bdf8,
+            #8b5cf6,
+            #22d3ee,
+            transparent);
+
+    opacity: 0.75;
+
+    filter:
+        blur(0.5px);
+}
+
+
+/* =========================================================
+   FEATURE ITEM — EACH ONE IS A CARD
+========================================================= */
+
+.feature-strip .feature-item {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    min-height: 90px;
+
+    padding: 18px 20px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(30, 41, 70, 0.70),
+            rgba(15, 23, 42, 0.55));
+
+    border:
+        1px solid rgba(148, 163, 184, 0.10);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* REMOVE OLD VERTICAL DIVIDERS */
+
+.feature-strip .feature-item+.feature-item {
+    border-left: 1px solid rgba(148, 163, 184, 0.10);
+    padding-left: 20px;
+}
+
+
+/* =========================================================
+   FEATURE CARD HOVER
+========================================================= */
+
+.feature-strip .feature-item:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(96, 165, 250, 0.35);
+
+    background:
+        linear-gradient(135deg,
+            rgba(37, 99, 235, 0.16),
+            rgba(124, 58, 237, 0.13));
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.22),
+        0 0 22px rgba(59, 130, 246, 0.10);
+}
+
+
+/* =========================================================
+   FEATURE ICON
+========================================================= */
+
+.feature-strip .feature-icon {
+    width: 56px;
+    height: 56px;
+
+    min-width: 56px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 17px;
+
+    font-size: 24px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(37, 99, 235, 0.25),
+            rgba(124, 58, 237, 0.22));
+
+    border:
+        1px solid rgba(96, 165, 250, 0.25);
+
+    color: #60a5fa;
+
+    box-shadow:
+        0 0 20px rgba(59, 130, 246, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   INDIVIDUAL ICON COLORS
+========================================================= */
+
+.feature-strip .feature-item:nth-child(1) .feature-icon {
+    color: #60a5fa;
+
+    background:
+        linear-gradient(135deg,
+            rgba(37, 99, 235, 0.24),
+            rgba(59, 130, 246, 0.12));
+}
+
+.feature-strip .feature-item:nth-child(2) .feature-icon {
+    color: #a78bfa;
+
+    background:
+        linear-gradient(135deg,
+            rgba(124, 58, 237, 0.24),
+            rgba(139, 92, 246, 0.12));
+}
+
+.feature-strip .feature-item:nth-child(3) .feature-icon {
+    color: #22d3ee;
+
+    background:
+        linear-gradient(135deg,
+            rgba(6, 182, 212, 0.24),
+            rgba(34, 211, 238, 0.12));
+}
+
+
+/* =========================================================
+   ICON HOVER
+========================================================= */
+
+.feature-strip .feature-item:hover .feature-icon {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 25px rgba(59, 130, 246, 0.25),
+        0 0 40px rgba(124, 58, 237, 0.10);
+}
+
+
+/* =========================================================
+   FEATURE TEXT
+========================================================= */
+
+.feature-strip .feature-item h3 {
+    margin: 0 0 6px;
+
+    color: #f8fafc;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+.feature-strip .feature-item p {
+    margin: 0;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    text-align: center;
+
+    padding: 18px 20px 25px;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+.footer-heart {
+    color: #94a3b8;
+
+    font-size: 18px;
+
+    margin-left: 4px;
+}
+
+
+/* =========================================================
+   FLOATING ANIMATION
+========================================================= */
+
+@keyframes floating {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .user-profile-card {
+        width: 360px;
+    }
+
+    .health-card {
+        width: 420px;
+    }
+
+    .hero {
+        gap: 40px;
+    }
+}
+
+
+/* =========================================================
+   SMALL LAPTOP / TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .user-profile-card {
+        width: 360px;
+    }
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding-top: 60px;
+    }
+
+    .hero-content {
+        max-width: 700px;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .health-card {
+        width: min(500px, 90%);
+    }
+
+    /* Feature cards become vertical */
+    .feature-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-strip .feature-item+.feature-item {
+        border-left: none;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .user-profile-card {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .user-subtitle {
+        display: none;
+    }
+
+    .user-greeting {
+        font-size: 14px;
+    }
+
+    .user-avatar {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+    }
+
+    .user-avatar span {
+        font-size: 21px;
+    }
+
+    .logout-button {
+        min-width: 82px;
+
+        padding: 10px 12px;
+
+        font-size: 13px;
+    }
+
+    .hero {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+
+        letter-spacing: -2px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+
+        max-width: 300px;
+
+        text-align: center;
+    }
+
+    .score-circle {
+        width: 210px;
+        height: 210px;
+    }
+
+    /* MOBILE FEATURE CARDS */
+
+    .feature-strip {
+        width: 92%;
+
+        padding: 12px;
+
+        gap: 12px;
+
+        border-radius: 20px;
+    }
+
+    .feature-strip .feature-item {
+        min-height: 85px;
+
+        padding: 16px;
+
+        border-radius: 16px;
+    }
+
+    .feature-strip .feature-item+.feature-item {
+        border-top: none;
+        padding-left: 16px;
+    }
+
+    .feature-strip .feature-icon {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+
+        font-size: 21px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .navbar {
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .user-greeting {
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .health-card {
+        width: 95%;
+        padding: 22px;
+    }
+
+    .card-header h2 {
+        font-size: 20px;
+    }
+
+    .score-circle {
+        width: 185px;
+        height: 185px;
+    }
+
+    .score-circle strong {
+        font-size: 34px;
+    }
+
+    .feature-strip .feature-item h3 {
+        font-size: 14px;
+    }
+
+    .feature-strip .feature-item p {
+        font-size: 11px;
+    }
+}
+
+/* =========================================================
+   FINAL HORIZONTAL FEATURE BAR
+========================================================= */
+
+.feature-strip {
+    width: 88% !important;
+    max-width: 1250px !important;
+
+    margin: 25px auto 30px !important;
+
+    padding: 18px 22px !important;
+
+    display: grid !important;
+
+    grid-template-columns: repeat(3, 1fr) !important;
+
+    gap: 0 !important;
+
+    border-radius: 22px !important;
+
+    background:
+        linear-gradient(135deg,
+            rgba(15, 23, 42, 0.96),
+            rgba(18, 29, 62, 0.90)) !important;
+
+    border: 1px solid rgba(96, 165, 250, 0.20) !important;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35),
+        0 0 35px rgba(37, 99, 235, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+
+    position: relative !important;
+
+    overflow: hidden !important;
+}
+
+
+/* TOP GLOW */
+
+.feature-strip::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 8%;
+    right: 8%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            #38bdf8,
+            #8b5cf6,
+            transparent);
+
+    opacity: 0.75;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   FEATURE ITEMS
+========================================================= */
+
+.feature-strip .feature-item {
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    gap: 16px !important;
+
+    min-height: 70px !important;
+
+    padding: 12px 28px !important;
+
+    position: relative !important;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease !important;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.feature-strip .feature-item+.feature-item {
+
+    border-left:
+        1px solid rgba(255, 255, 255, 0.10) !important;
+
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.feature-strip .feature-icon {
+
+    width: 48px !important;
+    height: 48px !important;
+
+    min-width: 48px !important;
+
+    flex-shrink: 0 !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 15px !important;
+
+    font-size: 22px !important;
+
+    border:
+        1px solid rgba(96, 165, 250, 0.25) !important;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease !important;
+}
+
+
+/* FIRST ICON */
+
+.feature-strip .feature-item:nth-child(1) .feature-icon {
+
+    color: #60a5fa !important;
+
+    background:
+        rgba(37, 99, 235, 0.18) !important;
+
+    box-shadow:
+        0 0 20px rgba(37, 99, 235, 0.18) !important;
+}
+
+
+/* SECOND ICON */
+
+.feature-strip .feature-item:nth-child(2) .feature-icon {
+
+    color: #a78bfa !important;
+
+    background:
+        rgba(124, 58, 237, 0.18) !important;
+
+    box-shadow:
+        0 0 20px rgba(124, 58, 237, 0.18) !important;
+}
+
+
+/* THIRD ICON */
+
+.feature-strip .feature-item:nth-child(3) .feature-icon {
+
+    color: #22d3ee !important;
+
+    background:
+        rgba(6, 182, 212, 0.18) !important;
+
+    box-shadow:
+        0 0 20px rgba(6, 182, 212, 0.18) !important;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.feature-strip .feature-item h3 {
+
+    margin:
+        0 0 5px 0 !important;
+
+    padding: 0 !important;
+
+    color: #f8fafc !important;
+
+    font-size: 15px !important;
+
+    font-weight: 600 !important;
+
+    line-height: 1.3 !important;
+}
+
+
+.feature-strip .feature-item p {
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    color: #94a3b8 !important;
+
+    font-size: 12px !important;
+
+    line-height: 1.5 !important;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.feature-strip .feature-item:hover {
+
+    transform:
+        translateY(-2px) !important;
+
+    background:
+        rgba(59, 130, 246, 0.04) !important;
+}
+
+
+.feature-strip .feature-item:hover .feature-icon {
+
+    transform:
+        scale(1.08) !important;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .feature-strip {
+
+        width: 90% !important;
+
+        grid-template-columns: 1fr !important;
+
+        padding: 12px !important;
+
+    }
+
+    .feature-strip .feature-item {
+
+        min-height: 70px !important;
+
+        padding: 16px 12px !important;
+
+    }
+
+    .feature-strip .feature-item+.feature-item {
+
+        border-left: none !important;
+
+        border-top:
+            1px solid rgba(255, 255, 255, 0.09) !important;
+
+    }
+
+}
+
+/* =========================================================
+   FINAL FEATURE STRIP — TARGET DESIGN
+========================================================= */
+
+.feature-strip {
+    width: 88%;
+    max-width: 1250px;
+
+    margin: 25px auto 30px;
+
+    padding: 18px 20px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    align-items: center;
+
+    gap: 0;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(15, 23, 42, 0.94),
+            rgba(20, 30, 65, 0.82));
+
+    border:
+        1px solid rgba(96, 165, 250, 0.20);
+
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.30),
+        0 0 35px rgba(37, 99, 235, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* TOP GLOWING LINE */
+
+.feature-strip::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 8%;
+    right: 8%;
+
+    height: 2px;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            #38bdf8,
+            #8b5cf6,
+            #22d3ee,
+            transparent);
+
+    opacity: 0.75;
+}
+
+
+/* =========================================================
+   FEATURE ITEM
+========================================================= */
+
+.feature-strip .feature-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    min-height: 72px;
+
+    padding: 10px 28px;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+
+    border-radius: 0;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* =========================================================
+   VERTICAL DIVIDERS
+========================================================= */
+
+.feature-strip .feature-item+.feature-item {
+
+    border-left:
+        1px solid rgba(255, 255, 255, 0.10);
+
+    padding-left: 32px;
+}
+
+
+/* =========================================================
+   FEATURE ICON
+========================================================= */
+
+.feature-strip .feature-icon {
+
+    width: 48px;
+    height: 48px;
+
+    min-width: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 21px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(37, 99, 235, 0.25),
+            rgba(124, 58, 237, 0.25));
+
+    border:
+        1px solid rgba(96, 165, 250, 0.20);
+
+    color: #60a5fa;
+
+    box-shadow:
+        0 0 18px rgba(59, 130, 246, 0.15);
+
+    flex-shrink: 0;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* FIRST ICON */
+
+.feature-strip .feature-item:nth-child(1) .feature-icon {
+
+    color: #60a5fa;
+
+    background:
+        rgba(37, 99, 235, 0.20);
+
+}
+
+
+/* SECOND ICON */
+
+.feature-strip .feature-item:nth-child(2) .feature-icon {
+
+    color: #a78bfa;
+
+    background:
+        rgba(124, 58, 237, 0.20);
+
+}
+
+
+/* THIRD ICON */
+
+.feature-strip .feature-item:nth-child(3) .feature-icon {
+
+    color: #22d3ee;
+
+    background:
+        rgba(6, 182, 212, 0.20);
+
+}
+
+
+/* =========================================================
+   FEATURE TITLE
+========================================================= */
+
+.feature-strip .feature-item h3 {
+
+    margin: 0 0 5px;
+
+    color: #f8fafc;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    line-height: 1.3;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   FEATURE DESCRIPTION
+========================================================= */
+
+.feature-strip .feature-item p {
+
+    margin: 0;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.feature-strip .feature-item:hover {
+
+    background:
+        rgba(59, 130, 246, 0.05);
+
+}
+
+
+.feature-strip .feature-item:hover .feature-icon {
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 25px rgba(59, 130, 246, 0.28);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .feature-strip {
+
+        width: 90%;
+
+        grid-template-columns: 1fr;
+
+        padding: 12px 15px;
+
+    }
+
+
+    .feature-strip .feature-item {
+
+        min-height: 70px;
+
+        padding: 14px 12px;
+
+    }
+
+
+    .feature-strip .feature-item+.feature-item {
+
+        border-left: none;
+
+        border-top:
+            1px solid rgba(255, 255, 255, 0.10);
+
+        padding-left: 12px;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .feature-strip {
+
+        width: 92%;
+
+    }
+
+
+    .feature-strip .feature-item {
+
+        gap: 12px;
+
+    }
+
+
+    .feature-strip .feature-icon {
+
+        width: 44px;
+        height: 44px;
+
+        min-width: 44px;
+
+        font-size: 19px;
+
+    }
+
+
+    .feature-strip .feature-item h3 {
+
+        font-size: 14px;
+
+    }
+
+
+    .feature-strip .feature-item p {
+
+        font-size: 11px;
+
+        white-space: normal;
+
+    }
+
+}

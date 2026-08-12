@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Health Assessment | AI Health Guardian</title>
+
+    <link rel="stylesheet" href="/static/css/assessment.css">
+
+</head>
+
+<body>
+
+    <div class="assessment-container">
+
+        <!-- Header -->
+
+        <div class="assessment-header">
+
+            <div class="brand">
+                🩺 AI Health Guardian
+            </div>
+
+            <h1>Health Assessment</h1>
+
+            <p>
+                Tell us a little about your current health condition.
+            </p>
+
+            <div class="notice">
+                ⚠️ This assessment is for educational and preventive
+                purposes only. It does not provide a medical diagnosis.
+            </div>
+
+        </div>
+
+
+        <!-- Assessment Form -->
+
+        <form action="/assessment" method="POST" class="assessment-form" id="assessmentForm">
+
+
+            <!-- Basic Information -->
+
+            <section class="form-section">
+
+                <h2>👤 Basic Information</h2>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="age">
+                            Age
+                        </label>
+
+                        <input type="number" id="age" name="age" min="1" max="120" placeholder="Enter your age"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="gender">
+                            Gender
+                        </label>
+
+                        <select id="gender" name="gender" required>
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="male">
+                                Male
+                            </option>
+
+                            <option value="female">
+                                Female
+                            </option>
+
+                            <option value="other">
+                                Other
+                            </option>
+
+                            <option value="prefer_not_to_say">
+                                Prefer not to say
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Symptoms -->
+
+            <section class="form-section">
+
+                <h2>🩹 Current Symptoms</h2>
+
+                <p class="section-description">
+                    Select any symptoms you are currently experiencing.
+                </p>
+
+
+                <div class="symptoms-grid">
+
+                    <label class="symptom-option">
+                        <input type="checkbox" name="symptoms" value="fever">
+                        <span>🌡️ Fever</span>
+                    </label>
+
+
+                    <label class="symptom-option">
+                        <input type="checkbox" name="symptoms" value="headache">
+                        <span>🤕 Headache</span>
+                    </label>
+
+
+                    <label class="symptom-option">
+                        <input type="checkbox" name="symptoms" value="cough">
+                        <span>😷 Cough</span>
+                    </label>
+
+
+                    <label class="symptom-option">
+                        <input type="checkbox" name="symptoms" value="fatigue">
+                        <span>😴 Fatigue</span>
+                    </label>
+
+
+                    <label class="symptom-option">
+                        <input type="checkbox" name="symptoms" value="stomach_pain">
+                        <span>🤢 Stomach discomfort</span>
+                    </label>
+
+
+                    <label class="symptom-option">
+                        <input type="checkbox" name="symptoms" value="breathing_difficulty">
+                        <span>🫁 Breathing difficulty</span>
+                    </label>
+
+                </div>
+
+            </section>
+
+
+            <!-- Lifestyle -->
+
+            <section class="form-section">
+
+                <h2>🏃 Lifestyle</h2>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="sleep">
+                            Average Sleep
+                        </label>
+
+                        <select id="sleep" name="sleep" required>
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="less_than_5">
+                                Less than 5 hours
+                            </option>
+
+                            <option value="5_to_7">
+                                5–7 hours
+                            </option>
+
+                            <option value="7_to_9">
+                                7–9 hours
+                            </option>
+
+                            <option value="more_than_9">
+                                More than 9 hours
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="activity">
+                            Physical Activity
+                        </label>
+
+                        <select id="activity" name="activity" required>
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option value="low">
+                                Low
+                            </option>
+
+                            <option value="moderate">
+                                Moderate
+                            </option>
+
+                            <option value="high">
+                                High
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Additional Information -->
+
+            <section class="form-section">
+
+                <h2>📝 Additional Information</h2>
+
+                <textarea name="additional_info" rows="5"
+                    placeholder="Describe anything else you think is relevant..."></textarea>
+
+            </section>
+
+
+            <!-- Submit -->
+
+            <div class="submit-area">
+
+                <button type="submit" class="submit-button" id="analyzeButton">
+
+                    🔍 Analyze My Health
+
+                </button>
+
+                <p>
+                    Your information will be processed by the
+                    AI Health Guardian system.
+                </p>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <!-- ================================= -->
+    <!-- AI ANALYSIS LOADING SCREEN -->
+    <!-- ================================= -->
+
+    <div class="ai-loading-screen" id="aiLoadingScreen">
+
+        <div class="ai-loading-card">
+
+
+            <!-- AI ICON -->
+
+            <div class="ai-loading-icon">
+
+                <div class="ai-pulse-ring"></div>
+
+                <div class="ai-robot">
+                    🤖
+                </div>
+
+            </div>
+
+
+            <!-- TITLE -->
+
+            <h2>
+                AI Health Guardian
+            </h2>
+
+
+            <p class="loading-main-text">
+                Analyzing your assessment...
+            </p>
+
+
+            <!-- ANIMATED DOTS -->
+
+            <div class="loading-dots">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+
+            <!-- ANALYSIS STEPS -->
+
+            <div class="analysis-steps">
+
+
+                <div class="analysis-step active">
+
+                    <span class="step-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        Reading your assessment
+                    </span>
+
+                </div>
+
+
+                <div class="analysis-step">
+
+                    <span class="step-icon">
+                        ◌
+                    </span>
+
+                    <span>
+                        Analyzing health patterns
+                    </span>
+
+                </div>
+
+
+                <div class="analysis-step">
+
+                    <span class="step-icon">
+                        ◌
+                    </span>
+
+                    <span>
+                        Generating personalized insights
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="loading-note">
+
+                ✦ Powered by AI Health Guardian
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================= -->
+    <!-- LOADING JAVASCRIPT -->
+    <!-- ================================= -->
+
+    <script>
+
+        const form =
+            document.getElementById("assessmentForm");
+
+        const loadingScreen =
+            document.getElementById("aiLoadingScreen");
+
+        const analyzeButton =
+            document.getElementById("analyzeButton");
+
+
+        form.addEventListener("submit", function () {
+
+            /*
+             * Show AI loading screen
+             */
+
+            loadingScreen.classList.add("show");
+
+
+            /*
+             * Prevent multiple submissions
+             */
+
+            analyzeButton.disabled = true;
+
+
+            /*
+             * Animate analysis steps
+             */
+
+            const steps =
+                document.querySelectorAll(".analysis-step");
+
+            let currentStep = 0;
+
+
+            const stepInterval =
+                setInterval(function () {
+
+                    if (currentStep < steps.length) {
+
+                        steps[currentStep]
+                            .classList.remove("active");
+
+                        steps[currentStep]
+                            .classList.add("completed");
+
+                        const icon =
+                            steps[currentStep]
+                                .querySelector(".step-icon");
+
+                        icon.textContent = "✓";
+
+                    }
+
+
+                    currentStep++;
+
+
+                    if (currentStep < steps.length) {
+
+                        steps[currentStep]
+                            .classList.add("active");
+
+                    }
+
+
+                    if (currentStep >= steps.length) {
+
+                        clearInterval(stepInterval);
+
+                    }
+
+                }, 1800);
+
+        });
+
+    </script>
+
+</body>
+
+</html>

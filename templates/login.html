@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | AI Health Guardian</title>
+
+    <link rel="stylesheet" href="/static/css/login.css">
+
+</head>
+
+<body>
+
+    <div class="auth-container">
+
+        <!-- BRAND -->
+
+        <div class="brand">
+            🩺 AI Health Guardian
+        </div>
+
+
+        <!-- LOGIN CARD -->
+
+        <div class="auth-card">
+
+            <div class="auth-header">
+
+                <div class="auth-icon">
+                    🔐
+                </div>
+
+                <h1>Welcome Back</h1>
+
+                <p>
+                    Login to continue to your AI Health Guardian
+                </p>
+
+            </div>
+
+
+            <!-- ERROR MESSAGE -->
+
+            {% if error %}
+
+            <div class="error-message">
+                ⚠️ {{ error }}
+            </div>
+
+            {% endif %}
+
+
+            <!-- LOGIN FORM -->
+
+            <form action="/login" method="POST">
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+                </div>
+
+
+                <!-- Login Button -->
+
+                <button type="submit" class="login-button">
+                    🔐 Login
+                </button>
+
+            </form>
+
+
+            <!-- DIVIDER -->
+
+            <div class="divider">
+
+                <span>OR</span>
+
+            </div>
+
+
+            <!-- GOOGLE LOGIN -->
+
+            <button type="button" class="google-button">
+
+                <span class="google-icon">
+                    G
+                </span>
+
+                Continue with Google
+
+            </button>
+
+
+            <!-- SIGNUP -->
+
+            <div class="auth-footer">
+
+                <p>
+                    Don't have an account?
+                    <a href="/signup">
+                        Create an account
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SECURITY NOTICE -->
+
+        <div class="security-notice">
+
+            🔒 Your account information is securely protected.
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
